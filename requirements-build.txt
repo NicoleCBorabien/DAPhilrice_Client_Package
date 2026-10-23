@@ -1,9 +1,6 @@
-flask
-waitress
-pandas
-numpy
-openpyxl
-statsmodels
-matplotlib
-scipy
-pyinstaller
+numpy>=1.26,<3
+pandas>=2.2,<3
+scipy>=1.12,<2
+statsmodels>=0.14,<1
+openpyxl>=3.1,<4
+pyinstaller>=6.11,<7
