@@ -1,32 +1,45 @@
-# PhilRice Client Package
+# PhilRice Forecast EXE Project
 
-A simple Windows client package for forecasting monthly **% of Total Workload by Specific Tag**.
+This project builds a single Windows executable:
 
-## Client workflow
+`PhilRice_Forecast.exe`
 
-1. Open `02_Source_Data/Forecast_Input_Template.xlsx`.
-2. Enter the employee's monthly Specific Tag workload percentages.
-3. Save and close Excel.
-4. Double-click `RUN_FORECAST.bat`.
-5. Open the generated workbook in `01_Results`.
+## Final client workflow
 
-## What the model does
+The client does not need VS Code, Python, Terminal, Jupyter, or GitHub.
 
-The forecasting script validates the input data, compares ARIMA and Holt using rolling validation and RMSE, selects the better-performing model, forecasts the next 12 months, normalizes monthly forecast shares to 100%, and creates an Excel results workbook with forecast and validation charts.
+1. Double-click `PhilRice_Forecast.exe`.
+2. A browser window opens automatically.
+3. Choose the PhilRice Excel workbook.
+4. Click **Run Forecast**.
+5. Wait for the completion message.
+6. Click **Download Excel Results**.
 
-## Input history requirements
+The forecasting backend runs locally on the user's computer.
 
-- `5-Year`: 60 consecutive months
-- `1-Year`: 12 consecutive months
-- `6-Month`: 6 consecutive months
+## Build the EXE for free with GitHub Actions
 
-## Main files
+1. Upload this project's CONTENTS to a GitHub repository.
+2. Open the repository in GitHub.
+3. Click **Actions**.
+4. Select **Build Windows EXE**.
+5. Click **Run workflow**.
+6. Wait for the workflow to finish.
+7. Open the completed workflow run.
+8. Scroll to **Artifacts**.
+9. Download `PhilRice_Forecast_Windows`.
+10. Unzip the artifact.
+11. The final client file is `PhilRice_Forecast.exe`.
 
-- `RUN_FORECAST.bat` — double-click to run the forecast on Windows
-- `02_Source_Data/Forecast_Input_Template.xlsx` — client input template
-- `03_Model_and_Code/philrice_forecasting.py` — forecasting engine
-- `01_Results/` — generated results
+## Development test
 
-## Privacy
+If you are developing locally:
 
-Do not commit real employee source data or generated employee forecast results to a public repository.
+```bash
+pip install -r requirements-build.txt
+python src/app.py
+```
+
+## Important Windows note
+
+This EXE is unsigned because the build process is free. Windows SmartScreen or a company Application Control policy may warn about or block unsigned executables. A tightly managed corporate computer may require IT allow-listing.

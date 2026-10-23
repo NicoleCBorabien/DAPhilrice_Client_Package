@@ -1,0 +1,9 @@
+flask
+waitress
+pandas
+numpy
+openpyxl
+statsmodels
+matplotlib
+scipy
+pyinstaller
